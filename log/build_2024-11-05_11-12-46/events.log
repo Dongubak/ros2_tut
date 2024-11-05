@@ -1,0 +1,195 @@
+[0.000000] (-) TimerEvent: {}
+[0.001140] (my_cpp_pkg) JobQueued: {'identifier': 'my_cpp_pkg', 'dependencies': OrderedDict()}
+[0.002349] (my_py_pkg) JobQueued: {'identifier': 'my_py_pkg', 'dependencies': OrderedDict()}
+[0.003053] (my_cpp_pkg) JobStarted: {'identifier': 'my_cpp_pkg'}
+[0.040712] (my_py_pkg) JobStarted: {'identifier': 'my_py_pkg'}
+[0.099396] (my_cpp_pkg) JobProgress: {'identifier': 'my_cpp_pkg', 'progress': 'cmake'}
+[0.100262] (-) TimerEvent: {}
+[0.102959] (my_cpp_pkg) Command: {'cmd': ['/usr/bin/cmake', '/home/kim/ros2_ws/src/my_cpp_pkg', '-DCMAKE_INSTALL_PREFIX=/home/kim/ros2_ws/install/my_cpp_pkg'], 'cwd': '/home/kim/ros2_ws/build/my_cpp_pkg', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'kim'), ('SSH_CLIENT', '192.168.0.39 49753 22'), ('LC_TIME', 'ko_KR.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/kim'), ('OLDPWD', '/home/kim/ros2_ws/src'), ('SSH_TTY', '/dev/pts/3'), ('JETSON_L4T', '35.6.0'), ('ROS_PYTHON_VERSION', '3'), ('JETSON_MODEL', 'NVIDIA Jetson Xavier NX Developer Kit'), ('LC_MONETARY', 'ko_KR.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('LC_TERMINAL_VERSION', '3.5.2'), ('COLCON_PREFIX_PATH', '/home/kim/ros2_ws/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'kim'), ('JETSON_MODULE', 'NVIDIA Jetson Xavier NX (Developer kit)'), ('JETSON_SERIAL_NUMBER', '1423620065646'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('JETSON_CODENAME', 'Jakku'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '9'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/foxy/bin:/usr/local/cuda-11.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'ko_KR.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'ko_KR.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('JETSON_SOC', 'tegra194'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy:/home/kim/ros2_ws/install/my_py_pkg'), ('SHELL', '/usr/bin/bash'), ('LC_NAME', 'ko_KR.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_TERMINAL', 'iTerm2'), ('LC_MEASUREMENT', 'ko_KR.UTF-8'), ('LC_IDENTIFICATION', 'ko_KR.UTF-8'), ('JETSON_CUDA_ARCH_BIN', '7.2'), ('PWD', '/home/kim/ros2_ws/build/my_cpp_pkg'), ('SSH_CONNECTION', '192.168.0.39 49753 192.168.0.36 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages:/home/kim/ros2_ws/install/my_py_pkg/lib/python3.8/site-packages'), ('LC_NUMERIC', 'ko_KR.UTF-8'), ('LC_PAPER', 'ko_KR.UTF-8'), ('COLCON', '1'), ('JETSON_JETPACK', '5.1.4'), ('JETSON_P_NUMBER', 'p3668-0000'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy:/home/kim/ros2_ws/install/my_py_pkg')]), 'shell': False}
+[0.201287] (-) TimerEvent: {}
+[0.303910] (-) TimerEvent: {}
+[0.404963] (-) TimerEvent: {}
+[0.506199] (-) TimerEvent: {}
+[0.607228] (-) TimerEvent: {}
+[0.708399] (-) TimerEvent: {}
+[0.809422] (-) TimerEvent: {}
+[0.910844] (-) TimerEvent: {}
+[1.013145] (-) TimerEvent: {}
+[1.115292] (-) TimerEvent: {}
+[1.216521] (-) TimerEvent: {}
+[1.317680] (-) TimerEvent: {}
+[1.384633] (my_cpp_pkg) StdoutLine: {'line': b'-- The C compiler identification is GNU 9.4.0\n'}
+[1.389499] (my_cpp_pkg) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 9.4.0\n'}
+[1.391224] (my_cpp_pkg) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc\n'}
+[1.419937] (-) TimerEvent: {}
+[1.522745] (-) TimerEvent: {}
+[1.626249] (my_cpp_pkg) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc -- works\n'}
+[1.628154] (-) TimerEvent: {}
+[1.635630] (my_cpp_pkg) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[1.728456] (-) TimerEvent: {}
+[1.829505] (-) TimerEvent: {}
+[1.930564] (-) TimerEvent: {}
+[2.031709] (-) TimerEvent: {}
+[2.090111] (my_cpp_pkg) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[2.131979] (-) TimerEvent: {}
+[2.177043] (my_cpp_pkg) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[2.180043] (my_cpp_pkg) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[2.198872] (my_cpp_pkg) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++\n'}
+[2.232186] (-) TimerEvent: {}
+[2.333191] (-) TimerEvent: {}
+[2.434325] (-) TimerEvent: {}
+[2.535250] (-) TimerEvent: {}
+[2.636499] (-) TimerEvent: {}
+[2.726241] (my_cpp_pkg) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ -- works\n'}
+[2.734370] (my_cpp_pkg) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[2.736708] (-) TimerEvent: {}
+[2.837582] (-) TimerEvent: {}
+[2.938588] (-) TimerEvent: {}
+[3.040574] (-) TimerEvent: {}
+[3.142274] (-) TimerEvent: {}
+[3.244140] (-) TimerEvent: {}
+[3.246834] (my_cpp_pkg) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[3.329055] (my_cpp_pkg) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[3.332227] (my_cpp_pkg) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[3.344404] (-) TimerEvent: {}
+[3.355842] (my_cpp_pkg) StdoutLine: {'line': b'-- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)\n'}
+[3.394676] (my_py_pkg) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/my_py_pkg', 'build', '--build-base', '/home/kim/ros2_ws/build/my_py_pkg/build', 'install', '--record', '/home/kim/ros2_ws/build/my_py_pkg/install.log', '--install-scripts', '$base/lib/my_py_pkg', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/kim/ros2_ws/src/my_py_pkg', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'kim', 'SSH_CLIENT': '192.168.0.39 49753 22', 'LC_TIME': 'ko_KR.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:', 'MOTD_SHOWN': 'pam', 'HOME': '/home/kim', 'OLDPWD': '/home/kim/ros2_ws/src', 'SSH_TTY': '/dev/pts/3', 'JETSON_L4T': '35.6.0', 'ROS_PYTHON_VERSION': '3', 'JETSON_MODEL': 'NVIDIA Jetson Xavier NX Developer Kit', 'LC_MONETARY': 'ko_KR.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'LC_TERMINAL_VERSION': '3.5.2', 'COLCON_PREFIX_PATH': '/home/kim/ros2_ws/install', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'kim', 'JETSON_MODULE': 'NVIDIA Jetson Xavier NX (Developer kit)', 'JETSON_SERIAL_NUMBER': '1423620065646', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'JETSON_CODENAME': 'Jakku', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '9', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/foxy/bin:/usr/local/cuda-11.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'LC_ADDRESS': 'ko_KR.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'ko_KR.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'JETSON_SOC': 'tegra194', 'AMENT_PREFIX_PATH': '/opt/ros/foxy:/home/kim/ros2_ws/install/my_py_pkg', 'SHELL': '/usr/bin/bash', 'LC_NAME': 'ko_KR.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_TERMINAL': 'iTerm2', 'LC_MEASUREMENT': 'ko_KR.UTF-8', 'LC_IDENTIFICATION': 'ko_KR.UTF-8', 'JETSON_CUDA_ARCH_BIN': '7.2', 'PWD': '/home/kim/ros2_ws/build/my_py_pkg', 'SSH_CONNECTION': '192.168.0.39 49753 192.168.0.36 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/kim/ros2_ws/build/my_py_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kim/ros2_ws/install/my_py_pkg/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages:/home/kim/ros2_ws/install/my_py_pkg/lib/python3.8/site-packages', 'LC_NUMERIC': 'ko_KR.UTF-8', 'LC_PAPER': 'ko_KR.UTF-8', 'COLCON': '1', 'JETSON_JETPACK': '5.1.4', 'JETSON_P_NUMBER': 'p3668-0000'}, 'shell': False}
+[3.444758] (-) TimerEvent: {}
+[3.498107] (my_cpp_pkg) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[3.499143] (my_cpp_pkg) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[3.544999] (-) TimerEvent: {}
+[3.646120] (-) TimerEvent: {}
+[3.747243] (-) TimerEvent: {}
+[3.848591] (-) TimerEvent: {}
+[3.949695] (-) TimerEvent: {}
+[4.050850] (-) TimerEvent: {}
+[4.151992] (-) TimerEvent: {}
+[4.253044] (-) TimerEvent: {}
+[4.354063] (-) TimerEvent: {}
+[4.455138] (-) TimerEvent: {}
+[4.544308] (my_py_pkg) StdoutLine: {'line': b'running egg_info\n'}
+[4.548196] (my_py_pkg) StdoutLine: {'line': b'writing ../../build/my_py_pkg/my_py_pkg.egg-info/PKG-INFO\n'}
+[4.549462] (my_py_pkg) StdoutLine: {'line': b'writing dependency_links to ../../build/my_py_pkg/my_py_pkg.egg-info/dependency_links.txt\n'}
+[4.550449] (my_py_pkg) StdoutLine: {'line': b'writing entry points to ../../build/my_py_pkg/my_py_pkg.egg-info/entry_points.txt\n'}
+[4.551183] (my_py_pkg) StdoutLine: {'line': b'writing requirements to ../../build/my_py_pkg/my_py_pkg.egg-info/requires.txt\n'}
+[4.551816] (my_py_pkg) StdoutLine: {'line': b'writing top-level names to ../../build/my_py_pkg/my_py_pkg.egg-info/top_level.txt\n'}
+[4.555306] (-) TimerEvent: {}
+[4.589725] (my_cpp_pkg) StdoutLine: {'line': b'-- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)\n'}
+[4.655632] (-) TimerEvent: {}
+[4.735042] (my_py_pkg) StdoutLine: {'line': b"reading manifest file '../../build/my_py_pkg/my_py_pkg.egg-info/SOURCES.txt'\n"}
+[4.739454] (my_py_pkg) StdoutLine: {'line': b"writing manifest file '../../build/my_py_pkg/my_py_pkg.egg-info/SOURCES.txt'\n"}
+[4.740597] (my_py_pkg) StdoutLine: {'line': b'running build\n'}
+[4.741165] (my_py_pkg) StdoutLine: {'line': b'running build_py\n'}
+[4.741964] (my_py_pkg) StdoutLine: {'line': b'running install\n'}
+[4.745971] (my_py_pkg) StdoutLine: {'line': b'running install_lib\n'}
+[4.753074] (my_py_pkg) StdoutLine: {'line': b'running install_data\n'}
+[4.753856] (my_py_pkg) StdoutLine: {'line': b'copying package.xml -> /home/kim/ros2_ws/install/my_py_pkg/share/my_py_pkg\n'}
+[4.754663] (my_py_pkg) StdoutLine: {'line': b'running install_egg_info\n'}
+[4.755726] (-) TimerEvent: {}
+[4.763101] (my_py_pkg) StdoutLine: {'line': b"removing '/home/kim/ros2_ws/install/my_py_pkg/lib/python3.8/site-packages/my_py_pkg-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[4.765280] (my_py_pkg) StdoutLine: {'line': b'Copying ../../build/my_py_pkg/my_py_pkg.egg-info to /home/kim/ros2_ws/install/my_py_pkg/lib/python3.8/site-packages/my_py_pkg-0.0.0-py3.8.egg-info\n'}
+[4.772035] (my_py_pkg) StdoutLine: {'line': b'running install_scripts\n'}
+[4.854098] (my_py_pkg) StdoutLine: {'line': b"writing list of installed files to '/home/kim/ros2_ws/build/my_py_pkg/install.log'\n"}
+[4.855980] (-) TimerEvent: {}
+[4.878045] (my_cpp_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[4.922308] (my_cpp_pkg) StdoutLine: {'line': b'-- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)\n'}
+[4.955042] (my_py_pkg) CommandEnded: {'returncode': 0}
+[4.958281] (-) TimerEvent: {}
+[5.018106] (my_py_pkg) JobEnded: {'identifier': 'my_py_pkg', 'rc': 0}
+[5.058463] (-) TimerEvent: {}
+[5.159422] (-) TimerEvent: {}
+[5.260626] (-) TimerEvent: {}
+[5.361830] (-) TimerEvent: {}
+[5.437739] (my_cpp_pkg) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "1.1.1f")  \n'}
+[5.461984] (-) TimerEvent: {}
+[5.562982] (-) TimerEvent: {}
+[5.582158] (my_cpp_pkg) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/foxy/include  \n'}
+[5.663210] (-) TimerEvent: {}
+[5.764408] (-) TimerEvent: {}
+[5.865548] (-) TimerEvent: {}
+[5.967353] (-) TimerEvent: {}
+[6.001333] (my_cpp_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[6.067657] (-) TimerEvent: {}
+[6.168720] (-) TimerEvent: {}
+[6.269740] (-) TimerEvent: {}
+[6.322584] (my_cpp_pkg) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)\n'}
+[6.331402] (my_cpp_pkg) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[6.337475] (my_cpp_pkg) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[6.370005] (-) TimerEvent: {}
+[6.470991] (-) TimerEvent: {}
+[6.572121] (-) TimerEvent: {}
+[6.673161] (-) TimerEvent: {}
+[6.774157] (-) TimerEvent: {}
+[6.821351] (my_cpp_pkg) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[6.822982] (my_cpp_pkg) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[6.874382] (-) TimerEvent: {}
+[6.975429] (-) TimerEvent: {}
+[7.076527] (-) TimerEvent: {}
+[7.177629] (-) TimerEvent: {}
+[7.278702] (-) TimerEvent: {}
+[7.291918] (my_cpp_pkg) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed\n'}
+[7.293282] (my_cpp_pkg) StdoutLine: {'line': b'-- Looking for pthread_create in pthreads\n'}
+[7.378935] (-) TimerEvent: {}
+[7.480093] (-) TimerEvent: {}
+[7.581151] (-) TimerEvent: {}
+[7.677826] (my_cpp_pkg) StdoutLine: {'line': b'-- Looking for pthread_create in pthreads - not found\n'}
+[7.678956] (my_cpp_pkg) StdoutLine: {'line': b'-- Looking for pthread_create in pthread\n'}
+[7.681262] (-) TimerEvent: {}
+[7.782042] (-) TimerEvent: {}
+[7.883071] (-) TimerEvent: {}
+[7.984187] (-) TimerEvent: {}
+[8.085343] (-) TimerEvent: {}
+[8.117733] (my_cpp_pkg) StdoutLine: {'line': b'-- Looking for pthread_create in pthread - found\n'}
+[8.124190] (my_cpp_pkg) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[8.185570] (-) TimerEvent: {}
+[8.286558] (-) TimerEvent: {}
+[8.387563] (-) TimerEvent: {}
+[8.488367] (-) TimerEvent: {}
+[8.589219] (-) TimerEvent: {}
+[8.690150] (-) TimerEvent: {}
+[8.791066] (-) TimerEvent: {}
+[8.892110] (-) TimerEvent: {}
+[8.925706] (my_cpp_pkg) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)\n'}
+[8.992417] (-) TimerEvent: {}
+[9.095366] (-) TimerEvent: {}
+[9.196439] (-) TimerEvent: {}
+[9.297598] (-) TimerEvent: {}
+[9.298725] (my_cpp_pkg) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[9.311655] (my_cpp_pkg) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[9.320434] (my_cpp_pkg) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[9.346242] (my_cpp_pkg) StdoutLine: {'line': b'-- Configuring done\n'}
+[9.361180] (my_cpp_pkg) StdoutLine: {'line': b'-- Generating done\n'}
+[9.369461] (my_cpp_pkg) StdoutLine: {'line': b'-- Build files have been written to: /home/kim/ros2_ws/build/my_cpp_pkg\n'}
+[9.397746] (-) TimerEvent: {}
+[9.407396] (my_cpp_pkg) CommandEnded: {'returncode': 0}
+[9.410396] (my_cpp_pkg) JobProgress: {'identifier': 'my_cpp_pkg', 'progress': 'build'}
+[9.413666] (my_cpp_pkg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/kim/ros2_ws/build/my_cpp_pkg', '--', '-j6', '-l6'], 'cwd': '/home/kim/ros2_ws/build/my_cpp_pkg', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'kim'), ('SSH_CLIENT', '192.168.0.39 49753 22'), ('LC_TIME', 'ko_KR.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/kim'), ('OLDPWD', '/home/kim/ros2_ws/src'), ('SSH_TTY', '/dev/pts/3'), ('JETSON_L4T', '35.6.0'), ('ROS_PYTHON_VERSION', '3'), ('JETSON_MODEL', 'NVIDIA Jetson Xavier NX Developer Kit'), ('LC_MONETARY', 'ko_KR.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('LC_TERMINAL_VERSION', '3.5.2'), ('COLCON_PREFIX_PATH', '/home/kim/ros2_ws/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'kim'), ('JETSON_MODULE', 'NVIDIA Jetson Xavier NX (Developer kit)'), ('JETSON_SERIAL_NUMBER', '1423620065646'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('JETSON_CODENAME', 'Jakku'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '9'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/foxy/bin:/usr/local/cuda-11.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'ko_KR.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'ko_KR.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('JETSON_SOC', 'tegra194'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy:/home/kim/ros2_ws/install/my_py_pkg'), ('SHELL', '/usr/bin/bash'), ('LC_NAME', 'ko_KR.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_TERMINAL', 'iTerm2'), ('LC_MEASUREMENT', 'ko_KR.UTF-8'), ('LC_IDENTIFICATION', 'ko_KR.UTF-8'), ('JETSON_CUDA_ARCH_BIN', '7.2'), ('PWD', '/home/kim/ros2_ws/build/my_cpp_pkg'), ('SSH_CONNECTION', '192.168.0.39 49753 192.168.0.36 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages:/home/kim/ros2_ws/install/my_py_pkg/lib/python3.8/site-packages'), ('LC_NUMERIC', 'ko_KR.UTF-8'), ('LC_PAPER', 'ko_KR.UTF-8'), ('COLCON', '1'), ('JETSON_JETPACK', '5.1.4'), ('JETSON_P_NUMBER', 'p3668-0000'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy:/home/kim/ros2_ws/install/my_py_pkg')]), 'shell': False}
+[9.498319] (-) TimerEvent: {}
+[9.600029] (-) TimerEvent: {}
+[9.668936] (my_cpp_pkg) CommandEnded: {'returncode': 0}
+[9.700642] (-) TimerEvent: {}
+[9.794247] (my_cpp_pkg) JobProgress: {'identifier': 'my_cpp_pkg', 'progress': 'install'}
+[9.801369] (-) TimerEvent: {}
+[9.859633] (my_cpp_pkg) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/kim/ros2_ws/build/my_cpp_pkg'], 'cwd': '/home/kim/ros2_ws/build/my_cpp_pkg', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'kim'), ('SSH_CLIENT', '192.168.0.39 49753 22'), ('LC_TIME', 'ko_KR.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-11.4/lib64:'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/kim'), ('OLDPWD', '/home/kim/ros2_ws/src'), ('SSH_TTY', '/dev/pts/3'), ('JETSON_L4T', '35.6.0'), ('ROS_PYTHON_VERSION', '3'), ('JETSON_MODEL', 'NVIDIA Jetson Xavier NX Developer Kit'), ('LC_MONETARY', 'ko_KR.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('LC_TERMINAL_VERSION', '3.5.2'), ('COLCON_PREFIX_PATH', '/home/kim/ros2_ws/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'kim'), ('JETSON_MODULE', 'NVIDIA Jetson Xavier NX (Developer kit)'), ('JETSON_SERIAL_NUMBER', '1423620065646'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('JETSON_CODENAME', 'Jakku'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '9'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/foxy/bin:/usr/local/cuda-11.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'ko_KR.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'ko_KR.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('JETSON_SOC', 'tegra194'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy:/home/kim/ros2_ws/install/my_py_pkg'), ('SHELL', '/usr/bin/bash'), ('LC_NAME', 'ko_KR.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_TERMINAL', 'iTerm2'), ('LC_MEASUREMENT', 'ko_KR.UTF-8'), ('LC_IDENTIFICATION', 'ko_KR.UTF-8'), ('JETSON_CUDA_ARCH_BIN', '7.2'), ('PWD', '/home/kim/ros2_ws/build/my_cpp_pkg'), ('SSH_CONNECTION', '192.168.0.39 49753 192.168.0.36 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages:/home/kim/ros2_ws/install/my_py_pkg/lib/python3.8/site-packages'), ('LC_NUMERIC', 'ko_KR.UTF-8'), ('LC_PAPER', 'ko_KR.UTF-8'), ('COLCON', '1'), ('JETSON_JETPACK', '5.1.4'), ('JETSON_P_NUMBER', 'p3668-0000'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy:/home/kim/ros2_ws/install/my_py_pkg')]), 'shell': False}
+[9.901421] (-) TimerEvent: {}
+[9.916294] (my_cpp_pkg) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[9.917782] (my_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/kim/ros2_ws/install/my_cpp_pkg/share/ament_index/resource_index/package_run_dependencies/my_cpp_pkg\n'}
+[9.919723] (my_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/kim/ros2_ws/install/my_cpp_pkg/share/ament_index/resource_index/parent_prefix_path/my_cpp_pkg\n'}
+[9.921299] (my_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/kim/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/environment/ament_prefix_path.sh\n'}
+[9.922522] (my_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/kim/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/environment/ament_prefix_path.dsv\n'}
+[9.923756] (my_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/kim/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/environment/path.sh\n'}
+[9.924889] (my_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/kim/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/environment/path.dsv\n'}
+[9.926015] (my_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/kim/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.bash\n'}
+[9.927150] (my_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/kim/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.sh\n'}
+[9.928295] (my_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/kim/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.zsh\n'}
+[9.929363] (my_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/kim/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.dsv\n'}
+[9.930880] (my_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/kim/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/package.dsv\n'}
+[9.932446] (my_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/kim/ros2_ws/install/my_cpp_pkg/share/ament_index/resource_index/packages/my_cpp_pkg\n'}
+[9.933731] (my_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/kim/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/cmake/my_cpp_pkgConfig.cmake\n'}
+[9.934617] (my_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/kim/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/cmake/my_cpp_pkgConfig-version.cmake\n'}
+[9.935946] (my_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/kim/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/package.xml\n'}
+[9.945640] (my_cpp_pkg) CommandEnded: {'returncode': 0}
+[10.002028] (-) TimerEvent: {}
+[10.108434] (-) TimerEvent: {}
+[10.149449] (my_cpp_pkg) JobEnded: {'identifier': 'my_cpp_pkg', 'rc': 0}
+[10.154476] (-) EventReactorShutdown: {}
