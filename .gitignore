@@ -1,0 +1,36 @@
+# 빌드 폴더
+/build/
+/install/
+/log/
+
+# Colcon 빌드 시스템 관련 파일
+.colcon/
+colcon_install_layout/
+
+# CMake 빌드 파일
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Python 빌드 파일
+*.pyc
+*.pyo
+__pycache__/
+*.pyd
+*.pdb
+*.pyo
+
+# ROS2 관련 파일
+.ros/
+.ament_tools/
+ament_workspace/
+
+# 기타 설정 파일
+*.swp
+*.swo
+*.DS_Store
+.vscode/
+.idea/
+*.iml

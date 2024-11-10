@@ -1,0 +1,63 @@
+[0.130s] Invoking command in '/home/kim/ros2_ws/src/build/my_cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kim/ros2_ws/install/my_py_pkg:/opt/ros/foxy /usr/bin/cmake /home/kim/ros2_ws/src/my_cpp_pkg -DCMAKE_INSTALL_PREFIX=/home/kim/ros2_ws/src/install/my_cpp_pkg
+[0.644s] -- The C compiler identification is GNU 9.4.0
+[1.119s] -- The CXX compiler identification is GNU 9.4.0
+[1.159s] -- Check for working C compiler: /usr/bin/cc
+[1.641s] -- Check for working C compiler: /usr/bin/cc -- works
+[1.651s] -- Detecting C compiler ABI info
+[2.103s] -- Detecting C compiler ABI info - done
+[2.181s] -- Detecting C compile features
+[2.183s] -- Detecting C compile features - done
+[2.200s] -- Check for working CXX compiler: /usr/bin/c++
+[2.710s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[2.716s] -- Detecting CXX compiler ABI info
+[3.221s] -- Detecting CXX compiler ABI info - done
+[3.295s] -- Detecting CXX compile features
+[3.299s] -- Detecting CXX compile features - done
+[3.321s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[3.459s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[3.460s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[4.609s] -- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)
+[4.903s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.950s] -- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[5.489s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[5.644s] -- Found FastRTPS: /opt/ros/foxy/include  
+[6.089s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[6.445s] -- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[6.456s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[6.461s] -- Looking for pthread.h
+[6.937s] -- Looking for pthread.h - found
+[6.938s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[7.399s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[7.400s] -- Looking for pthread_create in pthreads
+[7.776s] -- Looking for pthread_create in pthreads - not found
+[7.777s] -- Looking for pthread_create in pthread
+[8.211s] -- Looking for pthread_create in pthread - found
+[8.218s] -- Found Threads: TRUE  
+[9.071s] -- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[9.456s] -- Added test 'copyright' to check source files copyright and LICENSE
+[9.470s] -- Added test 'lint_cmake' to check CMake code style
+[9.481s] -- Added test 'xmllint' to check XML markup files
+[9.507s] -- Configuring done
+[9.521s] -- Generating done
+[9.530s] -- Build files have been written to: /home/kim/ros2_ws/src/build/my_cpp_pkg
+[9.568s] Invoked command in '/home/kim/ros2_ws/src/build/my_cpp_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kim/ros2_ws/install/my_py_pkg:/opt/ros/foxy /usr/bin/cmake /home/kim/ros2_ws/src/my_cpp_pkg -DCMAKE_INSTALL_PREFIX=/home/kim/ros2_ws/src/install/my_cpp_pkg
+[9.581s] Invoking command in '/home/kim/ros2_ws/src/build/my_cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kim/ros2_ws/install/my_py_pkg:/opt/ros/foxy /usr/bin/cmake --build /home/kim/ros2_ws/src/build/my_cpp_pkg -- -j6 -l6
+[9.827s] Invoked command in '/home/kim/ros2_ws/src/build/my_cpp_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kim/ros2_ws/install/my_py_pkg:/opt/ros/foxy /usr/bin/cmake --build /home/kim/ros2_ws/src/build/my_cpp_pkg -- -j6 -l6
+[10.027s] Invoking command in '/home/kim/ros2_ws/src/build/my_cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kim/ros2_ws/install/my_py_pkg:/opt/ros/foxy /usr/bin/cmake --install /home/kim/ros2_ws/src/build/my_cpp_pkg
+[10.074s] -- Install configuration: ""
+[10.075s] -- Installing: /home/kim/ros2_ws/src/install/my_cpp_pkg/share/ament_index/resource_index/package_run_dependencies/my_cpp_pkg
+[10.077s] -- Installing: /home/kim/ros2_ws/src/install/my_cpp_pkg/share/ament_index/resource_index/parent_prefix_path/my_cpp_pkg
+[10.079s] -- Installing: /home/kim/ros2_ws/src/install/my_cpp_pkg/share/my_cpp_pkg/environment/ament_prefix_path.sh
+[10.080s] -- Installing: /home/kim/ros2_ws/src/install/my_cpp_pkg/share/my_cpp_pkg/environment/ament_prefix_path.dsv
+[10.081s] -- Installing: /home/kim/ros2_ws/src/install/my_cpp_pkg/share/my_cpp_pkg/environment/path.sh
+[10.082s] -- Installing: /home/kim/ros2_ws/src/install/my_cpp_pkg/share/my_cpp_pkg/environment/path.dsv
+[10.083s] -- Installing: /home/kim/ros2_ws/src/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.bash
+[10.084s] -- Installing: /home/kim/ros2_ws/src/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.sh
+[10.085s] -- Installing: /home/kim/ros2_ws/src/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.zsh
+[10.086s] -- Installing: /home/kim/ros2_ws/src/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.dsv
+[10.087s] -- Installing: /home/kim/ros2_ws/src/install/my_cpp_pkg/share/my_cpp_pkg/package.dsv
+[10.089s] -- Installing: /home/kim/ros2_ws/src/install/my_cpp_pkg/share/ament_index/resource_index/packages/my_cpp_pkg
+[10.090s] -- Installing: /home/kim/ros2_ws/src/install/my_cpp_pkg/share/my_cpp_pkg/cmake/my_cpp_pkgConfig.cmake
+[10.091s] -- Installing: /home/kim/ros2_ws/src/install/my_cpp_pkg/share/my_cpp_pkg/cmake/my_cpp_pkgConfig-version.cmake
+[10.092s] -- Installing: /home/kim/ros2_ws/src/install/my_cpp_pkg/share/my_cpp_pkg/package.xml
+[10.106s] Invoked command in '/home/kim/ros2_ws/src/build/my_cpp_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kim/ros2_ws/install/my_py_pkg:/opt/ros/foxy /usr/bin/cmake --install /home/kim/ros2_ws/src/build/my_cpp_pkg

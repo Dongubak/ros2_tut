@@ -228,3 +228,195 @@ ros2 run my_py_pkg py_node
 ```
 
 새로운 터미널에서 ros2 run my_py_pkg py_node 명령을 통해 노드를 실행할 수 있습니다. source ~/.bashrc를 실행하여 ROS 2 설정이 반영된 환경을 사용하도록 합니다.
+
+
+## 간단한 C++ 노드 생성
+
+### cpp package생성
+```bash
+cd ros2_ws/src
+ros2 pkg create my_cpp_pkg --build-type ament_cmake --dependencies rclcpp
+```
+![alt text](image-1.png)
+
+### 선택 빌드하기
+```bash
+colcon build --packages-select my_cpp_pkg
+```
+![alt text](image-2.png)
+
+![alt text](image-4.png)
+
+- c_cpp_properties.json
+
+```json
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/opt/ros/foxy/include"
+            ],
+            "defines": [],
+            "intelliSenseMode": "linux-gcc-arm64"
+        }
+    ],
+    "version": 4
+}
+```
+
+- 생성된 노드를 run하기 위해 특정 디렉토리에 node를 생성해야 하며 이를 cmake에 추가한다.
+
+```txt
+cmake_minimum_required(VERSION 3.5)
+project(my_cpp_pkg)
+
+# Default to C++14
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 14)
+endif()
+
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
+# find dependencies
+find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+
+add_executable(cpp_node src/my_first_node.cpp) # executable 생성
+ament_target_dependencies(cpp_node rclcpp) #linking
+
+install(TARGETS
+  cpp_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+ament_package()
+
+```
+
+```text
+add_executable(cpp_node src/my_first_node.cpp) # executable 생성
+ament_target_dependencies(cpp_node rclcpp) # linking
+```
+
+- `add_executable`은 노드의 실행파일을 생성하고 cpp_node는 실행파일의 이름이며, 소스코드의 파일 경로는 src/my_first_node.cpp이다.
+- `ament_target_dependencies`는 cpp_node 실행파일을 rclcpp라이브러리와 링크해준다.
+
+```text
+install(TARGETS
+  cpp_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+ament_package()
+```
+
+- install은 빌드된 실행파일을 설치할 위치를 지정한다.
+- TARGETS는 설치된 실행파일을 지정하며 여기서는 cpp_node이다.
+- DESTINATION은 설치 위치를 지정한다. lib/my_cpp_pkg에 cpp_node실행파일을 설치한다는 것이다.
+
+#### 정리
+1.	프로젝트 이름과 요구되는 C++ 표준을 정의한다.
+2.	의존성 패키지를 찾고, 컴파일 옵션을 추가한다.
+3.	소스 코드에서 실행 파일을 생성하고, 필요한 라이브러리(rclcpp)와 연결한다.
+4.	빌드된 실행 파일을 특정 디렉토리(lib/my_cpp_pkg)에 설치하여, ROS2 환경에서 사용할 수 있게 한다.
+
+
+#### rclcpp를 이용하여 기본적인 ros2노드 생성하기
+
+```cpp
+#include "rclcpp/rclcpp.hpp"
+```
+- rclcpp 라이브러리를 포함하는 부분입니다. rclcpp는 ROS2의 C++ 클라이언트 라이브러리로, ROS2 노드를 작성하기 위해 필요한 기능을 제공합니다.
+
+```cpp
+int main(int argc, char** argv) {
+   rclcpp::init(argc, argv); /// 로스 커뮤니케이션 초기화
+```
+- main 함수는 C++ 프로그램의 시작 지점입니다.
+- `rclcpp::init(argc, argv);`는 ROS2 커뮤니케이션을 초기화하는 함수입니다. ROS2는 노드 간의 통신을 위해 초기화가 필요하며, 이 함수는 ROS2 프로그램의 시작에서 반드시 호출해야 합니다. argc와 argv는 ROS2 초기화 시 명령줄 인수를 전달하기 위해 사용됩니다.
+
+```cpp
+auto node = std::make_shared<rclcpp::Node>("cpp_test"); /// node는 shared pointer임 스코프 벗어나도 살아있을 수 있음
+```   
+- `std::make_shared<rclcpp::Node>("cpp_test");`는 cpp_test라는 이름의 노드를 생성하고, 그 노드를 std::shared_ptr로 관리합니다.
+- `std::shared_ptr`는 스마트 포인터로, 해당 포인터를 사용하는 모든 영역에서 메모리를 안전하게 관리할 수 있게 해줍니다. 즉, 이 노드는 node 변수의 스코프를 벗어나도 다른 곳에서 참조할 수 있다면 메모리가 해제되지 않고 유지됩니다.
+
+```cpp
+RCLCPP_INFO(node->get_logger(), "Hello Cpp Node");
+```
+
+- RCLCPP_INFO는 ROS2의 로그 메시지 함수입니다.
+- 첫 번째 인수로 `node->get_logger()`를 사용하여 노드의 로거(logger)를 가져옵니다.
+- 두 번째 인수는 출력할 메시지로, "Hello Cpp Node"라는 문자열이 출력됩니다.
+- 이 줄을 통해 콘솔에 "Hello Cpp Node"라는 정보 메시지가 출력됩니다.
+
+```cpp
+rclcpp::spin(node); /// 노드를 스핀함 (기다림) 노드가 살이있게 유지해준다.
+```
+
+
+- `rclcpp::spin(node);`는 ROS2 노드를 활성화 상태로 유지하는 함수입니다. 이 함수가 호출되면, 노드는 통신을 위해 계속 대기 상태에 들어갑니다.
+- spin 함수는 종료될 때까지 실행을 지속하므로, 일반적으로 프로그램이 계속 실행되도록 유지하고, 메시지 수신 등의 이벤트를 처리하는 역할을 합니다.
+
+```cpp
+rclcpp::shutdown(); /// 노드가 멈추면 로스 커뮤니케이션 종료
+```
+- `rclcpp::shutdown();`은 ROS2 커뮤니케이션을 종료하는 함수입니다.
+- spin이 종료되거나 프로그램이 종료될 때 shutdown을 호출하여 ROS2 노드와의 모든 연결을 정리합니다.
+
+#### 전체 흐름 요약
+1.	`rclcpp::init`으로 ROS2 커뮤니케이션을 초기화합니다.
+2.	`std::make_shared<rclcpp::Node>("cpp_test")`로 cpp_test라는 이름의 노드를 생성합니다.
+3.	`RCLCPP_INFO`로 노드의 로거를 통해 “Hello Cpp Node” 메시지를 출력합니다.
+4.	`rclcpp::spin`을 통해 노드가 계속 실행되도록 유지합니다.
+5.	`rclcpp::shutdown`을 호출하여 ROS2 커뮤니케이션을 종료합니다.
+
+#### 타이머를 이용하여 일정시간 마다 로깅하기
+```cpp
+#include "rclcpp/rclcpp.hpp"
+
+class MyNode: public rclcpp::Node {
+public:
+   MyNode(): Node("cpp_test") {
+      RCLCPP_INFO(this->get_logger(), "Hello Cpp class Node");
+
+      timer_ = this->create_wall_timer(std::chrono::seconds(1), 
+                                       std::bind(&MyNode::timerCallback, this));
+   }
+private:
+   void timerCallback() {
+      RCLCPP_INFO(this->get_logger(), "Hello");
+   }
+   rclcpp::TimerBase::SharedPtr timer_;
+};
+
+int main(int argc, char** argv) {
+   rclcpp::init(argc, argv); /// 로스 커뮤니케이션 초기화
+
+   auto node = std::make_shared<MyNode>();
+   rclcpp::spin(node); /// 노드를 스핀함 (기다림) 노드가 살이있게 유지해준다.
+   rclcpp::shutdown(); /// 노드가 멈추면 로스 커뮤니케이션 종료
+
+   return 0;
+}
+```
+
+```cpp
+      timer_ = this->create_wall_timer(std::chrono::seconds(1), 
+                                       std::bind(&MyNode::timerCallback, this));
+```
+
+- `create_wall_timer`는 일정시간마다 주기적으로 `callback`함수를 호출하는 타이머를 생성한다.
+- `std::chrono::second(1)`은 타이머의 간격을 나타내며 1초 마다 timerCallback함수를 호출하도록 설정한다.
+- `std::bind(&MyNode::timerCallback, this)`는 timerCallback 함수를 현재 객체(this)의 멤버 함수로 바인딩한다.
+- `rclcpp::TimerBase::SharedPtr timer_;`는 타이머 객체를 가리키는 스마트 포인터이다. 이를 통해 타이머의 수명을 관리할 수 있다.
+
+#### 실제 타이머 객체의 위치
+- 타이머 객체는 ROS2 노드의 메모리 공간에 생성된다.
+- 그 타이머 객체를 가리키는 스마트 포인터 timer_를 통해 타이머를 사용한다.
+- node가 파괴될 때 타이머 객체도 파괴된다.
+- `rclcpp::spin(node)`가 실행되고 있는 동안 타이머는 활성 상태로 유지되며, 지정된 간격에 따라 `callback function`을 호출한다.
