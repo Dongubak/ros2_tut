@@ -420,3 +420,155 @@ int main(int argc, char** argv) {
 - 그 타이머 객체를 가리키는 스마트 포인터 timer_를 통해 타이머를 사용한다.
 - node가 파괴될 때 타이머 객체도 파괴된다.
 - `rclcpp::spin(node)`가 실행되고 있는 동안 타이머는 활성 상태로 유지되며, 지정된 간격에 따라 `callback function`을 호출한다.
+
+![alt text](image-5.png)
+
+
+
+### 코드 템플릿
+
+#### cpp
+```cpp
+#include "rclcpp/rclcpp.hpp"
+ 
+class MyCustomNode : public rclcpp::Node // MODIFY NAME
+{
+public:
+    MyCustomNode() : Node("node_name") // MODIFY NAME
+    {
+    }
+ 
+private:
+};
+ 
+int main(int argc, char **argv)
+{
+    rclcpp::init(argc, argv);
+    auto node = std::make_shared<MyCustomNode>(); // MODIFY NAME
+    rclcpp::spin(node);
+    rclcpp::shutdown();
+    return 0;
+}
+```
+
+```python
+#!/usr/bin/env python3
+import rclpy
+from rclpy.node import Node
+ 
+ 
+class MyCustomNode(Node): # MODIFY NAME
+    def __init__(self):
+        super().__init__("node_name") # MODIFY NAME
+ 
+ 
+def main(args=None):
+    rclpy.init(args=args)
+    node = MyCustomNode() # MODIFY NAME
+    rclpy.spin(node)
+    rclpy.shutdown()
+ 
+ 
+if __name__ == "__main__":
+    main()
+```
+
+### rcl
+
+rcl은 ros client library이다. pure C librarty임
+dds는 data distribution service로 미들웨어임 
+
+rclcpp cpp 클라이언트 라이브러리임 python도 똑같음 
+
+### 디버깅 및 실행
+
+- 먼저 환경변수에 workspace와 foxy가 있는지 확인한다.
+
+![alt text](image-6.png)
+
+만약 환경변수를 추가하거나 수정했다면 source `~/.bashrc`를 해줘야한다.
+
+- tab을 두번 누르면 해당 명령어에 대한 모든 명령을 볼 수 있다.
+
+![alt text](image-7.png)
+
+- 실행시 노드를 찾기 위해서도 tab을 사용할 수 있다.
+
+![alt text](image-8.png)
+
+- `ros2 node list`
+![alt text](image-9.png)
+
+는 현재 실행중인 모든 노드를 확인할 수 있다.
+
+![alt text](image-10.png)
+
+- help메세지
+
+![alt text](image-11.png)
+
+- python 노드를 종료한 뒤 `ros2 node list`의 출력이 없는 것을 확인할 수 있다.
+![alt text](image-12.png)
+
+### 같은 이름의 노드 여러개 생성하기
+두 개의 같으 노드를 실행시키는 것은 ros2에서 가능하지만 권장하지 않는다.
+
+- 동시 실행
+
+![alt text](image-13.png)
+
+- 경고 메세지
+
+![alt text](image-14.png)
+
+따라서 같은 노드를 다른 이름으로 실행시켜야 한다.
+
+![alt text](image-15.png)
+
+```bash
+ros2 run my_py_pkg py_node --ros-args --remap __node:=abc
+```
+
+![alt text](image-16.png)
+
+- ros2 node list로 확인하기
+
+![alt text](image-17.png)
+
+- abc와 node2 동시에 실행시키기
+
+![alt text](image-18.png)
+
+## When editing python file, automatically build that file
+
+```bash
+colcon build --packages-select my_py_pkg --symlink-install
+```
+
+- It's useful when debugging.
+
+### output
+```bash
+kim@kim-desktop:~/ros2_ws$ ros2 run my_py_pkg py_node
+[INFO] [1732441836.792203966] [py_test]: Hello ROS2!!!!
+[INFO] [1732441837.295931309] [py_test]: Hello1
+[INFO] [1732441837.795945941] [py_test]: Hello2
+[INFO] [1732441838.296296971] [py_test]: Hello3
+[INFO] [1732441838.795834259] [py_test]: Hello4
+```
+
+- It's useful for python, C++ isn't work.
+
+
+### how to use terminator
+
+link:
+shanepark.tistory.com/313
+
+### Activity1
+
+![alt text](activity1.png)
+
+![alt text](activity1_2.png)
+
+

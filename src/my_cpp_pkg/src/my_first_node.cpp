@@ -1,26 +1,31 @@
 #include "rclcpp/rclcpp.hpp"
 
-class MyNode: public rclcpp::Node {
+using namespace rclcpp;
+using namespace std;
+class MyNode: public Node {
 public:
-   MyNode(): Node("cpp_test") {
-      RCLCPP_INFO(this->get_logger(), "Hello Cpp class Node");
+   MyNode() : Node("cpp_node"), counter(0) {
+      RCLCPP_INFO(this->get_logger(), "hello cpp class node");
 
-      timer_ = this->create_wall_timer(std::chrono::seconds(1), 
-                                       std::bind(&MyNode::timerCallback, this));
+      timer_ = this->create_wall_timer(chrono::seconds(1),
+         bind(&MyNode::timerCallback, this));
    }
-private:
+
+   private:
    void timerCallback() {
-      RCLCPP_INFO(this->get_logger(), "Hello");
+      counter++;
+      RCLCPP_INFO(this->get_logger(), "hello %d", counter);
    }
-   rclcpp::TimerBase::SharedPtr timer_;
+   TimerBase::SharedPtr timer_;
+   int counter;
 };
 
 int main(int argc, char** argv) {
-   rclcpp::init(argc, argv); /// 로스 커뮤니케이션 초기화
+   init(argc, argv);
 
-   auto node = std::make_shared<MyNode>();
-   rclcpp::spin(node); /// 노드를 스핀함 (기다림) 노드가 살이있게 유지해준다.
-   rclcpp::shutdown(); /// 노드가 멈추면 로스 커뮤니케이션 종료
+   auto node = std::make_shared<MyNode>(); // 노드 생성
+   spin(node);
+   shutdown();
 
    return 0;
 }
