@@ -2,9 +2,26 @@
 위 레파지토리는 ROS2공식 문서를 공부한 뒤 정리하는 공간입니다.
 
 ## 목차
-- [1. 예시1](#예시1)
+- [1. VSCODE 설정](#예시1)
 
-## 예시1
+## VSCODE terminal에서 ros 실행시 발생하는 오류
+### vscode terminal에서 ros실행 시 오류가 발생한다.
+아래코드는 공식문서에서 제시한 예시코드이다.
+```bash
+ros2 run turtlesim turtlesim_node
+```
+
+### 위 문제를 해결하기 위해서는 settings.json을 수정해주어야 한다.
+아래 코드를 추가하자
+```json
+{
+    ...
+    "terminal.integrated.env.linux": {
+        "GTK_PATH": ""
+    },
+    ...
+}
+```
 
 <!-- ## colcon 설치
 sudo apt install python3-colcon-co
