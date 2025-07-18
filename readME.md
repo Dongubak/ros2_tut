@@ -30,6 +30,8 @@ mkdir src
 colcon build
 ```
 
+dd
+
 이 후 log(build process), install, log 디렉토리가 생성된다.
 
 4. install directory의 local_setup.bash를 소스 해줌
