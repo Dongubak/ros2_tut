@@ -7,24 +7,6 @@
 - [1. VSCODE 설정](#vscode-terminal에서-ros-실행시-발생하는-오류)
 
 
-
-
-### dfd
-### dfd
-### dfd
-### dfd
-### dfd
-### dfd
-### dfd
-### dfd
-### dfd
-### dfd
-### dfd
-### dfd
-### dfd
-### dfd
-### dfd
-
 ## VSCODE terminal에서 ros 실행시 발생하는 오류
 ### vscode terminal에서 ros실행 시 오류가 발생한다.
 아래코드는 공식문서에서 제시한 예시코드이다.
