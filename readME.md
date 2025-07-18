@@ -1,8 +1,29 @@
 # ROS2 공식문서 스터디 및 정리 레파지토리
 위 레파지토리는 ROS2공식 문서를 공부한 뒤 정리하는 공간입니다.
 
+
+
 ## 목차
 - [1. VSCODE 설정](#vscode-terminal에서-ros-실행시-발생하는-오류)
+
+
+
+
+### dfd
+### dfd
+### dfd
+### dfd
+### dfd
+### dfd
+### dfd
+### dfd
+### dfd
+### dfd
+### dfd
+### dfd
+### dfd
+### dfd
+### dfd
 
 ## VSCODE terminal에서 ros 실행시 발생하는 오류
 ### vscode terminal에서 ros실행 시 오류가 발생한다.
@@ -22,6 +43,7 @@ ros2 run turtlesim turtlesim_node
     ...
 }
 ```
+
 
 <!-- ## colcon 설치
 sudo apt install python3-colcon-co
