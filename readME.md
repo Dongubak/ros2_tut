@@ -2,7 +2,7 @@
 위 레파지토리는 ROS2공식 문서를 공부한 뒤 정리하는 공간입니다.
 
 ## 목차
-- [1. VSCODE 설정](#예시1)
+- [1. VSCODE 설정](#vscode-terminal에서-ros-실행시-발생하는-오류)
 
 ## VSCODE terminal에서 ros 실행시 발생하는 오류
 ### vscode terminal에서 ros실행 시 오류가 발생한다.
