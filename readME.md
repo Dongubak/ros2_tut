@@ -5,11 +5,15 @@
 
 25.07.18 <br />
 https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim.html<br />
+25.07.21 <br />
+https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html#ros2-topic-echo<br />
 
 
 ## 목차
 - [1. VSCODE 설정](#vscode-terminal에서-ros-실행시-발생하는-오류)
-
+- [2. Using Turtlesim And rqt](#using-turtlesim_teleop_key-we-can-move-turtle)
+- [3. Node](#node)
+- [4. Understanding Topic](#topic)
 
 ## VSCODE terminal에서 ros 실행시 발생하는 오류
 ### vscode terminal에서 ros실행 시 오류가 발생한다.
@@ -30,6 +34,61 @@ ros2 run turtlesim turtlesim_node
 }
 ```
 
+## turtlesim and turtlesim_teleop_key
+### Using turtlesim_teleop_key, we can move turtle.
+bash code below
+```bash
+$ ros2 run turtlesim turtlesim_node
+$ ros2 run turtlesim turtle_teleop_key
+```
+
+### install rqt plugin
+bash code below
+```bash
+$ sudo apt update
+$ sudo apt install '~nros-rolling-rqt*'
+```
+
+### select service caller
+Click on the Service dropdown list to see turtlesim's services, and select the /spawn service.
+
+
+## Node
+
+### 실행 중인 모든 노드의 이름을 표시합니다. 
+```bash
+ros2 node list
+```
+
+![alt text](image.png)
+
+### 노드에 대한 자세한 정보에 액세스할 수 있습니다.
+```bash
+ros2 node info <node_name>
+```
+
+![alt text](image-1.png)
+
+> ros2 node info구독자, 게시자, 서비스 및 작업 목록을 반환합니다. 즉, 해당 노드와 상호 작용하는 ROS 그래프 연결입니다.
+
+![alt text](image-2.png)
+
+## Topic
+
+### What is Topic
+ROS 2는 복잡한 시스템을 여러 모듈형 노드로 나눕니다. 토픽은 노드 간 메시지 교환을 위한 버스 역할을 하는 ROS 그래프의 핵심 요소입니다.
+
+![alt text](image-3.png)
+
+### rqt
+We can use rqt, opening plugin > introspection > node grpah.
+```bash
+rqt
+```
+
+![alt text](image-4.png)
+
+The graph is depicting how the `/turtlesim` node and the `/teleop_turtle` node are communicating with each other over a topic. The `/teleop_turtle` node is publishing data (the keystrokes you enter to move the turtle around) to the `/turtle1/cmd_vel` topic, and the `/turtlesim` node is subscribed to that topic to receive the data.
 
 <!-- ## colcon 설치
 sudo apt install python3-colcon-co
