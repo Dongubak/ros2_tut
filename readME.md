@@ -11,7 +11,8 @@ https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-
 
 ## 목차
 - [1. VSCODE 설정](#vscode-terminal에서-ros-실행시-발생하는-오류)
-- [2. Using Turtlesim And rqt](#using-turtlesim_teleop_key-we-can-move-turtle)
+- [2. 파이썬 가상환경](#파이썬-가상환경-만들기)
+- [3. Using Turtlesim And rqt](#using-turtlesim_teleop_key-we-can-move-turtle)
 - [3. Node](#node)
 - [4. Understanding Topic](#topic)
 
@@ -32,6 +33,35 @@ ros2 run turtlesim turtlesim_node
     },
     ...
 }
+```
+
+## 파이썬 가상환경 만들기
+[1. 가상환경을 만들기 위한 venv 설치](#1-가상환경을-만들기-위한-venv-설치)<br />
+[2. 가상환경 생성](#2-가상환경-생성)<br />
+[3. 해당 환경에서 파이프 업그레이트](#3-해당-환경에서-파이프-업그레이드)<br />
+
+
+### 1. 가상환경을 만들기 위한 venv 설치
+```bash
+$ sudo apt install python3.12-venv
+```
+### 2. 가상환경 생성
+
+```bash
+$ python3 -m venv ~/venv
+$ source ~/venv/bin/activate
+```
+
+### 3. 해당 환경에서 파이프 업그레이드
+
+```bash
+$ pip install --upgrade pip
+```
+
+### 4. jupyter 설치
+
+```bash
+$ pip install jupyter
 ```
 
 ## turtlesim and turtlesim_teleop_key
