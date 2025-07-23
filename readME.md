@@ -76,6 +76,10 @@ $ pip install --upgrade pip
 $ pip install jupyter
 ```
 
+<br />
+<br />
+<br />
+
 ## 도메인
 ### 같은 공유기 내에서 묶는 도구로서 도메인을 사용한다.
 > 즉 도메인이 같은 디바이스끼리 연결됨
@@ -257,6 +261,10 @@ angular_velocity: 0.0
 
 > teleport_absolute service를 호출하여 위치를 변경시키면 pose를 구독하는 터미널에서 변경된 pose값을 얻을 수 있다.
 
+<br />
+<br />
+<br />
+
 ## turtlesim and turtlesim_teleop_key
 ### Using turtlesim_teleop_key, we can move turtle.
 bash code below
@@ -295,6 +303,10 @@ ros2 node info <node_name>
 > ros2 node info구독자, 게시자, 서비스 및 작업 목록을 반환합니다. 즉, 해당 노드와 상호 작용하는 ROS 그래프 연결입니다.
 
 ![alt text](image-2.png)
+
+<br />
+<br />
+<br />
 
 ## Topic
 
