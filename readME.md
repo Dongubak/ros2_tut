@@ -11,13 +11,13 @@ https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-
 
 ## 목차
 - [1. VSCODE 설정](#vscode-terminal에서-ros-실행시-발생하는-오류)
-- [2. 파이썬 가상환경](#파이썬-가상환경-만들기)rrrfds
+- [2. 파이썬 가상환경](#파이썬-가상환경-만들기)
 - [3. 도메인](#도메인)
 - [4. service](#service)
 - [5. topic](#topic22)
-- [5. Using Turtlesim And rqt](#using-turtlesim_teleop_key-we-can-move-turtle)
-- [6. Node](#node)
-- [7. Understanding Topic](#topic)
+- [6. Using Turtlesim And rqt](#using-turtlesim_teleop_key-we-can-move-turtle)
+- [7. Node](#node)
+- [8. Understanding Topic](#topic)
 
 <br />
 <br />
