@@ -7,6 +7,7 @@
 https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim.html<br />
 25.07.21 <br />
 https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html#ros2-topic-echo<br />
+25.07.23
 https://www.youtube.com/watch?v=aFMDvkCr9vY&list=PL0xYz_4oqpvhj4JaPSTeGI2k5GQEE36oi&index=36
 
 
