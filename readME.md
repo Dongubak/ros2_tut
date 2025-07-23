@@ -11,10 +11,17 @@ https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-
 
 ## 목차
 - [1. VSCODE 설정](#vscode-terminal에서-ros-실행시-발생하는-오류)
-- [2. 파이썬 가상환경](#파이썬-가상환경-만들기)
-- [3. Using Turtlesim And rqt](#using-turtlesim_teleop_key-we-can-move-turtle)
-- [3. Node](#node)
-- [4. Understanding Topic](#topic)
+- [2. 파이썬 가상환경](#파이썬-가상환경-만들기)rrrfds
+- [3. 도메인](#도메인)
+- [4. service](#service)
+- [5. topic](#topic22)
+- [5. Using Turtlesim And rqt](#using-turtlesim_teleop_key-we-can-move-turtle)
+- [6. Node](#node)
+- [7. Understanding Topic](#topic)
+
+<br />
+<br />
+<br />
 
 ## VSCODE terminal에서 ros 실행시 발생하는 오류
 ### vscode terminal에서 ros실행 시 오류가 발생한다.
@@ -35,10 +42,15 @@ ros2 run turtlesim turtlesim_node
 }
 ```
 
+<br />
+<br />
+<br />
+
 ## 파이썬 가상환경 만들기
 [1. 가상환경을 만들기 위한 venv 설치](#1-가상환경을-만들기-위한-venv-설치)<br />
 [2. 가상환경 생성](#2-가상환경-생성)<br />
 [3. 해당 환경에서 파이프 업그레이트](#3-해당-환경에서-파이프-업그레이드)<br />
+[4. jupyter설치](#4-jupyter-설치)<br />
 
 
 ### 1. 가상환경을 만들기 위한 venv 설치
@@ -63,6 +75,187 @@ $ pip install --upgrade pip
 ```bash
 $ pip install jupyter
 ```
+
+## 도메인
+### 같은 공유기 내에서 묶는 도구로서 도메인을 사용한다.
+> 즉 도메인이 같은 디바이스끼리 연결됨
+
+```bash
+alias sz="source ~/.zshrc; echo \"bashrc is reloaded\""
+alias ros_domain="export ROS_DOMAIN_ID=13; echo \"ROS_DOMAIN_ID=13\""
+alias rolling="source /opt/ros/rolling/setup.zsh; ros_domain; echo \"ROS2 rolling is activated!\""
+```
+
+> ROS_DOMAIN_ID를 13번으로 함
+
+<br />
+<br />
+<br />
+
+## service
+[1. 서비스 조회하기](#서비스-리스트를-확인하면-호출할-수-있는-서비스를-조회할-수-있다)<br />
+[2. 서비스 타입 조회하기](#서비스-리스트를-확인하면-호출할-수-있는-서비스를-조회할-수-있다)<br />
+[3. 요청타입과 응답타입 조회하기](#해당-타입의-요청-타입과-응답타입을-조회할-수-있다)<br />
+[4. 서비스 호출하기](#해당-요청타입을-참고하여-서비스를-호출할-수-있다)<br />
+[5. 리셋 서비스 호출하기](#리셋하는-서비스를-호출할-수-있다)<br />
+[6. 추가 거북이를 스폰하기](#거북이-스폰하는-서비스-호출하기)<br />
+
+
+### 서비스 리스트를 확인하면 호출할 수 있는 서비스를 조회할 수 있다.
+```bash
+╰─ ros2 service list      
+/clear
+/kill
+/reset
+/spawn
+/turtle1/set_pen
+/turtle1/teleport_absolute
+/turtle1/teleport_relative
+/turtlesim/describe_parameters
+/turtlesim/get_parameter_types
+/turtlesim/get_parameters
+/turtlesim/get_type_description
+/turtlesim/list_parameters
+/turtlesim/set_parameters
+/turtlesim/set_parameters_atomically
+
+```
+
+### 서비스의 타입을 조회할 수 있다.
+```bash
+╰─ ros2 service type /turtle1/teleport_absolute
+turtlesim_msgs/srv/TeleportAbsolute
+```
+
+### 해당 타입의 요청 타입과 응답타입을 조회할 수 있다.
+```bash
+╰─ ros2 interface show turtlesim_msgs/srv/TeleportAbsolute
+float32 x
+float32 y
+float32 theta
+```
+
+### 해당 요청타입을 참고하여 서비스를 호출할 수 있다.
+```bash
+╰─ ros2 service call /turtle1/teleport_absolute turtlesim_msgs/srv/TeleportAbsolute "{x: 2, y: 2, theta: 1.57}"
+waiting for service to become available...
+requester: making request: turtlesim_msgs.srv.TeleportAbsolute_Request(x=2.0, y=2.0, theta=1.57)
+
+response:
+turtlesim_msgs.srv.TeleportAbsolute_Response()
+
+```
+
+![alt text](image-5.png)
+
+> 현재 위치가 바뀐것을 확인 할 수 있다.
+> theta값은 거북이가 바라보는 방향을 의미한다.
+
+### 리셋하는 서비스를 호출할 수 있다.
+```bash
+╰─ ros2 service call /reset std_srvs/srv/Empty 
+waiting for service to become available...
+requester: making request: std_srvs.srv.Empty_Request()
+
+response:
+std_srvs.srv.Empty_Response()
+```
+
+![alt text](image-6.png)
+
+> 리셋 시 초기위치로 바뀐것을 확인할 수 있다.
+
+### 거북이 스폰하는 서비스 호출하기
+```bash
+╭─  │  ~ ··························································································· ✔ │ at 17:23:46  
+╰─ ros2 service type /spawn
+turtlesim_msgs/srv/Spawn
+╭─  │  ~ ··························································································· ✔ │ at 17:25:49  
+╰─ ros2 interface show turtlesim_msgs/srv/Spawn
+float32 x
+float32 y
+float32 theta
+string name # Optional.  A unique name will be created and returned if this is empty
+---
+string name
+╭─  │  ~ ··························································································· ✔ │ at 17:26:04  
+╰─ ros2 service call /spawn turtlesim_msgs/srv/Spawn "{x: 1, y: 1, theta: 0, name: ''}"
+waiting for service to become available...
+requester: making request: turtlesim_msgs.srv.Spawn_Request(x=1.0, y=1.0, theta=0.0, name='')
+
+response:
+turtlesim_msgs.srv.Spawn_Response(name='turtle2')
+```
+
+<br />
+<br />
+<br />
+
+## topic22
+### topic를 조회할 수 있으며 `-v`옵션을 통해 발행 타입과 구독타입을 알 수 있다.
+> Published topics는 터틀이 발행하는 토픽들이며 Subscribed topics는 터틀이 구독하는 토픽이다.
+
+```bash
+╰─ ros2 topic list -v
+Published topics:
+ * /parameter_events [rcl_interfaces/msg/ParameterEvent] 2 publishers
+ * /rosout [rcl_interfaces/msg/Log] 2 publishers
+ * /turtle1/color_sensor [turtlesim_msgs/msg/Color] 1 publisher
+ * /turtle1/pose [turtlesim_msgs/msg/Pose] 1 publisher
+ * /turtle2/color_sensor [turtlesim_msgs/msg/Color] 1 publisher
+ * /turtle2/pose [turtlesim_msgs/msg/Pose] 1 publisher
+
+Subscribed topics:
+ * /parameter_events [rcl_interfaces/msg/ParameterEvent] 1 subscriber
+ * /turtle1/cmd_vel [geometry_msgs/msg/Twist] 1 subscriber
+ * /turtle2/cmd_vel [geometry_msgs/msg/Twist] 1 subscriber
+
+```
+
+### 특정 topic에 대한 정보를 조회할 수 있다.
+```bash
+╰─ ros2 topic info /turtle1/pose
+Type: turtlesim_msgs/msg/Pose
+Publisher count: 1
+Subscription count: 0
+```
+
+### 특정 토픽이 발행하는 값을 터미널에서 조회할 수 있다.
+```bash
+╰─ ros2 topic echo /turtle1/pose
+x: 5.544444561004639
+y: 5.544444561004639
+theta: 0.0
+linear_velocity: 0.0
+angular_velocity: 0.0
+```
+
+### rqt로 조회시 해당 토픽을 터미널에서 구독하는 것을 그래프로 확인할 수 있다.
+```bash
+$ rqt
+```
+
+![alt text](image-7.png)
+
+### 터틀의 위치를 변경시킨 뒤 터미널에서 구독값이 변경된 것을 확인할 수 있다.
+```bash
+╰─ ros2 service call /turtle1/teleport_absolute turtlesim_msgs/srv/TeleportAbsolute "{x: 5, y: 5, theta: 1.1}"
+waiting for service to become available...
+requester: making request: turtlesim_msgs.srv.TeleportAbsolute_Request(x=5.0, y=5.0, theta=1.1)
+
+response:
+turtlesim_msgs.srv.TeleportAbsolute_Response()
+
+
+╰─ ros2 topic echo /turtle1/pose
+x: 5.0
+y: 5.0
+theta: 1.100000023841858
+linear_velocity: 0.0
+angular_velocity: 0.0
+```
+
+> teleport_absolute service를 호출하여 위치를 변경시키면 pose를 구독하는 터미널에서 변경된 pose값을 얻을 수 있다.
 
 ## turtlesim and turtlesim_teleop_key
 ### Using turtlesim_teleop_key, we can move turtle.
