@@ -9,7 +9,8 @@ https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Introducing-Turtles
 https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html#ros2-topic-echo<br />
 25.07.23 <br />
 https://www.youtube.com/watch?v=aFMDvkCr9vY&list=PL0xYz_4oqpvhj4JaPSTeGI2k5GQEE36oi&index=36
-
+25.07.24 <br />
+https://youtu.be/aFMDvkCr9vY?si=E21GxEVJ9kKe_RSY
 
 ## 목차
 - [1. VSCODE 설정](#vscode-terminal에서-ros-실행시-발생하는-오류)
@@ -17,6 +18,7 @@ https://www.youtube.com/watch?v=aFMDvkCr9vY&list=PL0xYz_4oqpvhj4JaPSTeGI2k5GQEE3
 - [3. 도메인](#도메인)
 - [4. service](#service)
 - [5. topic](#topic22)
+- [6. pose 구독 노드 만들기](#pose-토픽을-구독하는-노드-만들어-보기)
 - [6. Using Turtlesim And rqt](#using-turtlesim_teleop_key-we-can-move-turtle)
 - [7. Node](#node)
 - [8. Understanding Topic](#topic)
@@ -284,6 +286,10 @@ $ sudo apt install '~nros-rolling-rqt*'
 
 ### select service caller
 Click on the Service dropdown list to see turtlesim's services, and select the /spawn service.
+
+
+## pose 토픽을 구독하는 노드 만들어 보기
+[pose 구독 노드](python/subscription.ipynb)
 
 
 ## Node
